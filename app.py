@@ -15,12 +15,9 @@ RED = (255,0,0)
 GREEN = (0,255,0)
 
 circle_radius = 30
-padding = 10
-value = 0
 board = [[0] * cols for i in range(rows)]
 win = pygame.display.set_mode((s_width, s_height))
 pygame.font.init()
-player_pos = 1
 
 def draw_board(win):
     for i in range(rows):
@@ -82,6 +79,7 @@ def check_winner(board, turn):
                 return turn
     return -1
 
+
 def main():
     global board
     run = True
@@ -123,5 +121,6 @@ def main():
                         winner = check_winner(board, switch_turn(turn))
                  
     pygame.display.quit()
+
 
 main()
